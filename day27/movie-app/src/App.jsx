@@ -35,7 +35,9 @@ function App() {
     <main className="container">
       <h1>Movie App</h1>
       <section className="movie-list">
-        {/* TODO 02: MovieCard 컴포넌트를 호출하고 movie1, movie2, movie3을 전달하세요. */}
+        <MovieCard movie={movie1} />
+        <MovieCard movie={movie2} />
+        <MovieCard movie={movie3} />
       </section>
     </main>
   );
