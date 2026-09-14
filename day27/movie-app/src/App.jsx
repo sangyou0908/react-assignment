@@ -1,0 +1,36 @@
+import "./App.css";
+
+// 영화 데이터 (제공)
+const movie1 = {
+  title: "인셉션",
+  rating: 8.8,
+  poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+};
+
+const movie2 = {
+  title: "인터스텔라",
+  rating: 8.6,
+  poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+};
+
+const movie3 = {
+  title: "다크 나이트",
+  rating: 9.0,
+  poster: "https://image.tmdb.org/t/p/w500/qJ2tCh2ThA2To2T93qCHYm4O3R8.jpg",
+};
+
+// TODO 01: MovieCard 컴포넌트를 정의하고 { movie } Props를 받아 화면에 출력하세요.
+// function MovieCard({ movie }) { ... }
+
+function App() {
+  return (
+    <main className="container">
+      <h1>Movie App</h1>
+      <section className="movie-list">
+        {/* TODO 02: MovieCard 컴포넌트를 호출하고 movie1, movie2, movie3을 전달하세요. */}
+      </section>
+    </main>
+  );
+}
+
+export default App;
