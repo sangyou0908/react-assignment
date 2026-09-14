@@ -20,17 +20,4 @@ const movie3 = {
   poster: "https://image.tmdb.org/t/p/w500/qJ2tCh2ThA2To2T93qCHYm4O3R8.jpg",
 };
 
-function App() {
-  return (
-    <main className="container">
-      <h1>Movie App</h1>
-      <section className="movie-list">
-        <MovieCard movie={movie1} />
-        <MovieCard movie={movie2} />
-        <MovieCard movie={movie3} />
-      </section>
-    </main>
-  );
-}
-
 export default App;
