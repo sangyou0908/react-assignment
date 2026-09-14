@@ -1,4 +1,5 @@
 import "./App.css";
+import MovieCard from "./components/MovieCard";
 
 // 영화 데이터 (제공)
 const movie1 = {
