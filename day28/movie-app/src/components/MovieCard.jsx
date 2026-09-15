@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 function MovieCard({ movie }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
   return (
     <article className="movie-card">
       <img src={movie.poster} alt={movie.title} />
