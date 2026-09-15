@@ -8,7 +8,7 @@ function MovieCard({ movie }) {
   }
 
   return (
-    <article className="movie-card">
+    <article className={isFavorite ? "movie-card favorite" : "movie-card"}>
       <img src={movie.poster} alt={movie.title} />
       <h3>{movie.title}</h3>
       <p>평점: {movie.rating}</p>
