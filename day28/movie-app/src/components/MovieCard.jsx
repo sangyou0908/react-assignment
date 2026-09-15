@@ -3,11 +3,16 @@ import { useState } from "react";
 function MovieCard({ movie }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
+  function handleFavorite() {
+    setIsFavorite(!isFavorite);
+  }
+
   return (
     <article className="movie-card">
       <img src={movie.poster} alt={movie.title} />
       <h3>{movie.title}</h3>
       <p>평점: {movie.rating}</p>
+      <button onClick={handleFavorite}>찜 상태 변경</button>
 
       {/*
         이 위치에 찜 기능을 추가합니다.
