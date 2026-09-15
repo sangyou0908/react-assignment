@@ -16,7 +16,7 @@ function MovieCard({ movie }) {
         onClick={handleFavorite}
         className={isFavorite ? "favorite-button active" : "favorite-button"}
       >
-        {isFavorite ? "❤️ 찜 해제" : "🤍찜"}
+        {isFavorite ? "❤️ 찜 해제" : "🤍 찜"}
       </button>
 
       {isFavorite ? <span className="favorite-badge">찜한 영화</span> : null}
