@@ -25,7 +25,9 @@ const movies = [
 function MovieList() {
   const [keyword, setKeyword] = useState("");
 
-  // TODO 2. keyword State와 handleChange 함수를 만들어 보세요.
+  function handleChange(event) {
+    setKeyword(event.target.value);
+  }
 
   // TODO 3. movies와 keyword를 이용해 filteredMovies를 만들어 보세요.
 
@@ -33,11 +35,20 @@ function MovieList() {
     <>
       {/* TODO 4. 영화 목록 위에 검색 input을 추가해 보세요. */}
 
-      <section className="movie-list">
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie}></MovieCard>
-        ))}
-      </section>
+      <>
+        <input
+          type="text"
+          placeholder="영화 제목을 입력해 주세요."
+          className="search-input"
+          value={keyword}
+          onChange={handleChange}
+        ></input>
+        <section className="movie-list">
+          {movies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie}></MovieCard>
+          ))}
+        </section>
+      </>
 
       {/* TODO 6. 검색 결과가 없을 때 안내 문구가 표시되도록 변경해 보세요. */}
     </>
