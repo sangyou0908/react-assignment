@@ -25,6 +25,10 @@ const movies = [
 function MovieList() {
   const [keyword, setKeyword] = useState("");
 
+  const filteredMovies = movies.filter((movie) =>
+    movie.title.includes(keyword),
+  );
+
   function handleChange(event) {
     setKeyword(event.target.value);
   }
@@ -33,24 +37,18 @@ function MovieList() {
 
   return (
     <>
-      {/* TODO 4. 영화 목록 위에 검색 input을 추가해 보세요. */}
-
-      <>
-        <input
-          type="text"
-          placeholder="영화 제목을 입력해 주세요."
-          className="search-input"
-          value={keyword}
-          onChange={handleChange}
-        ></input>
-        <section className="movie-list">
-          {movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie}></MovieCard>
-          ))}
-        </section>
-      </>
-
-      {/* TODO 6. 검색 결과가 없을 때 안내 문구가 표시되도록 변경해 보세요. */}
+      <input
+        type="text"
+        placeholder="영화 제목을 입력해 주세요."
+        className="search-input"
+        value={keyword}
+        onChange={handleChange}
+      />
+      <section className="movie-list">
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie}></MovieCard>
+        ))}
+      </section>
     </>
   );
 }
