@@ -20,13 +20,20 @@ const movies = [
     rating: 9.0,
     poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
   },
+  {
+    id: 4,
+    title: "Avatar",
+    rating: 9.0,
+    poster:
+      "https://media.themoviedb.org/t/p/w300_and_h450_face/m5lCha2XcbDowDoYHPc0DTNaCPU.jpg",
+  },
 ];
 
 function MovieList() {
   const [keyword, setKeyword] = useState("");
 
   const filteredMovies = movies.filter((movie) =>
-    movie.title.includes(keyword),
+    movie.title.toLowerCase().includes(keyword.toLowerCase()),
   );
 
   function handleChange(event) {
