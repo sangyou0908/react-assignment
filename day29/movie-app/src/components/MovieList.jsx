@@ -34,10 +34,9 @@ function MovieList() {
       {/* TODO 4. 영화 목록 위에 검색 input을 추가해 보세요. */}
 
       <section className="movie-list">
-        {/* TODO 5. 아래 MovieCard 세 개를 map()을 사용한 반복 출력으로 변경해 보세요. */}
-        <MovieCard movie={movie1} />
-        <MovieCard movie={movie2} />
-        <MovieCard movie={movie3} />
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie}></MovieCard>
+        ))}
       </section>
 
       {/* TODO 6. 검색 결과가 없을 때 안내 문구가 표시되도록 변경해 보세요. */}
