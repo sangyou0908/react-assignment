@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(960px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.container h1 {
+  margin: 0 0 24px;
+}
+
+.search-input {
+  width: min(420px, 100%);
+  margin-bottom: 24px;
+  padding: 10px 12px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie-card {
+  position: relative;
+  width: 240px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  padding-bottom: 16px;
+}
+
+.movie-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.movie-card h3,
+.movie-card p {
+  margin: 12px 16px;
+}
+
+.favorite-button {
+  margin: 4px 16px 0;
+  padding: 8px 12px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.favorite-button.active {
+  font-weight: 700;
+  border-color: #222;
+}
+
+.favorite-badge {
+  display: inline-block;
+  margin: 10px 16px 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eee;
+  font-size: 14px;
+}
+
+.empty-message {
+  margin-top: 16px;
+  color: #666;
+}
