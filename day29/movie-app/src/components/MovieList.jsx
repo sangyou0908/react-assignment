@@ -1,4 +1,5 @@
 import MovieCard from "./MovieCard.jsx";
+import { useState } from "react";
 
 const movies = [
   {
@@ -22,8 +23,7 @@ const movies = [
 ];
 
 function MovieList() {
-  // TODO 1. movie1, movie2, movie3을 하나의 movies 배열로 변경하고,
-  // 각 영화 객체에 고유한 id를 추가해 보세요.
+  const [keyword, setKeyword] = useState("");
 
   // TODO 2. keyword State와 handleChange 함수를 만들어 보세요.
 
