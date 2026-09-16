@@ -33,8 +33,6 @@ function MovieList() {
     setKeyword(event.target.value);
   }
 
-  // TODO 3. movies와 keyword를 이용해 filteredMovies를 만들어 보세요.
-
   return (
     <>
       <input
@@ -44,11 +42,15 @@ function MovieList() {
         value={keyword}
         onChange={handleChange}
       />
-      <section className="movie-list">
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie}></MovieCard>
-        ))}
-      </section>
+      {filteredMovies.length === 0 ? (
+        <p>검색 결과가 없습니다.</p>
+      ) : (
+        <section className="movie-list">
+          {filteredMovies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie}></MovieCard>
+          ))}
+        </section>
+      )}
     </>
   );
 }
