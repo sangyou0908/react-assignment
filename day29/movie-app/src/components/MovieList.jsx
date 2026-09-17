@@ -9,6 +9,9 @@ function MovieList() {
     movie.title.toLowerCase().includes(keyword.toLowerCase()),
   );
 
+  const [isLoading, setLoading] = useState(true);
+  const [Error, setError] = useState("");
+
   useEffect(() => {
     async function fetchMovies() {
       // API 요청 코드
