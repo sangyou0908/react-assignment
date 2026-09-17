@@ -18,6 +18,13 @@ function MovieList() {
           Authorization: `Bearer ${token}`,
         },
       };
+      const response = await fetch(
+        "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1",
+        options,
+      );
+      const data = await response.json();
+
+      setMovies(data.results);
     }
 
     fetchMovies();
