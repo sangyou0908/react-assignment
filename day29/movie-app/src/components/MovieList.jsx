@@ -9,25 +9,36 @@ function MovieList() {
     movie.title.toLowerCase().includes(keyword.toLowerCase()),
   );
 
-  const [isLoading, setLoading] = useState(true);
-  const [Error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     async function fetchMovies() {
-      // API 요청 코드
-      const token = import.meta.env.VITE_TMDB_TOKEN;
-      const options = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      const response = await fetch(
-        "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1",
-        options,
-      );
-      const data = await response.json();
+      try {
+        // API 요청 코드
+        const token = import.meta.env.VITE_TMDB_TOKEN;
+        const options = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        const response = await fetch(
+          "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1",
+          options,
+        );
 
-      setMovies(data.results);
+        if (!response.ok) {
+          throw new Error(`요청 실패: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        setMovies(data.results);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
     fetchMovies();
@@ -35,6 +46,14 @@ function MovieList() {
 
   function handleChange(event) {
     setKeyword(event.target.value);
+  }
+
+  if (isLoading) {
+    return <p>영화 정보를 불러오는 중입니다...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
   }
 
   return (
