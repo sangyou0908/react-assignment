@@ -1,59 +1,43 @@
 import MovieCard from "./MovieCard.jsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+const movies = [
+  {
+    id: 1,
+    title: "인셉션",
+    rating: 8.8,
+    poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+  },
+  {
+    id: 2,
+    title: "인터스텔라",
+    rating: 8.7,
+    poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+  },
+  {
+    id: 3,
+    title: "다크 나이트",
+    rating: 9.0,
+    poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+  },
+  {
+    id: 4,
+    title: "Avatar",
+    rating: 9.0,
+    poster:
+      "https://media.themoviedb.org/t/p/w300_and_h450_face/m5lCha2XcbDowDoYHPc0DTNaCPU.jpg",
+  },
+];
 
 function MovieList() {
-  const [movies, setMovies] = useState([]);
   const [keyword, setKeyword] = useState("");
 
   const filteredMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(keyword.toLowerCase()),
   );
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    async function fetchMovies() {
-      try {
-        // API 요청 코드
-        const token = import.meta.env.VITE_TMDB_TOKEN;
-        const options = {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        };
-        const response = await fetch(
-          "https://api.themoviedb.org/3/movie/upcoming?language=ko-KR&page=1",
-          options,
-        );
-
-        if (!response.ok) {
-          throw new Error(`요청 실패: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        setMovies(data.results);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchMovies();
-  }, []);
-
   function handleChange(event) {
     setKeyword(event.target.value);
-  }
-
-  if (isLoading) {
-    return <p>영화 정보를 불러오는 중입니다...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
   }
 
   return (
