@@ -9,9 +9,12 @@ function MovieCard({ movie }) {
 
   return (
     <article className="movie-card">
-      <img src={movie.poster} alt={movie.title} />
+      <img
+        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+        alt={movie.title}
+      />
       <h3>{movie.title}</h3>
-      <p>평점: {movie.rating}</p>
+      <p>평점: {movie.vote_average.toFixed(1)}</p>
 
       <button
         className={isFavorite ? "favorite-button active" : "favorite-button"}
@@ -20,9 +23,7 @@ function MovieCard({ movie }) {
         {isFavorite ? "♥ 찜 해제" : "♡ 찜"}
       </button>
 
-      {isFavorite ? (
-        <span className="favorite-badge">찜한 영화</span>
-      ) : null}
+      {isFavorite ? <span className="favorite-badge">찜한 영화</span> : null}
     </article>
   );
 }
