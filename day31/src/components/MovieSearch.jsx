@@ -75,6 +75,7 @@ function MovieSearch() {
       const data = await response.json();
 
       // TODO 1. Search API 응답 결과(영화 목록)을 movies State에 저장하세요.
+      setMovies(data.results);
     } catch (error) {
       setError(error.message);
     } finally {
