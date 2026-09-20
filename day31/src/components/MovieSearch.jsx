@@ -99,9 +99,9 @@ function MovieSearch() {
           className="search-button"
           type="submit"
           // TODO 3. Loading 중에는 버튼을 클릭할 수 없도록 만드세요.
+          disabled={isLoading}
         >
-          {/* TODO 4. Loading 상태에 따라 버튼 문구를 변경하세요. */}
-          검색
+          {isLoading ? "검색 중..." : "검색"}
         </button>
       </form>
 
