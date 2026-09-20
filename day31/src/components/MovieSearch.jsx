@@ -86,7 +86,7 @@ function MovieSearch() {
   return (
     <>
       {/* TODO 2. submit Event가 발생하면 handleSearch가 실행되도록 연결하세요. */}
-      <form className="search-form">
+      <form className="search-form" onSubmit={handleSearch}>
         <input
           className="search-input"
           type="text"
