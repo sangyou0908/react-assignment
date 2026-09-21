@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={<MovieSearch />} />
         <Route path="/movies/:id" element={<MovieDetail />} />
       </Routes>
-      <MovieSearch />
+      {/* <MovieSearch /> */}
     </main>
   );
 }
