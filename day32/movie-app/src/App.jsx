@@ -13,6 +13,10 @@ function App() {
           "/movies/:id"에서는 MovieDetail이 표시되도록
           Routes와 Route를 작성하세요.
       */}
+      <Routes>
+        <Route path="/" element={<MovieSearch />} />
+        <Route path="/movie/:id" element={<MovieDetail />} />
+      </Routes>
       <MovieSearch />
     </main>
   );
