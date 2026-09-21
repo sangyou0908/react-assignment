@@ -28,7 +28,9 @@ function MovieCard({ movie }) {
           /movies/영화id 형태의 상세 페이지로 이동하는
           Link를 작성하세요.
       */}
-      <Link to={`/movies/${movie.id}`}>상세 보기</Link>
+      <Link className="detail-link" to={`/movies/${movie.id}`}>
+        상세 보기
+      </Link>
 
       <button
         className={isFavorite ? "favorite-button active" : "favorite-button"}
