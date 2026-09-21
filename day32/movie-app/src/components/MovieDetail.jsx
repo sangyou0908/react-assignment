@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router";
 
 function MovieDetail() {
   // TODO 4. useParams()를 사용하여 현재 URL의 id를 가져오세요.
-  const id = "550";
+  const { id } = useParams();
 
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
