@@ -28,6 +28,7 @@ function MovieCard({ movie }) {
           /movies/영화id 형태의 상세 페이지로 이동하는
           Link를 작성하세요.
       */}
+      <Link to={`/movie/${movie.id}`}>상세 보기</Link>
 
       <button
         className={isFavorite ? "favorite-button active" : "favorite-button"}
@@ -36,9 +37,7 @@ function MovieCard({ movie }) {
         {isFavorite ? "♥ 찜 해제" : "♡ 찜"}
       </button>
 
-      {isFavorite ? (
-        <span className="favorite-badge">찜한 영화</span>
-      ) : null}
+      {isFavorite ? <span className="favorite-badge">찜한 영화</span> : null}
     </article>
   );
 }
