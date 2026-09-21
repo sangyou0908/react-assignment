@@ -8,6 +8,8 @@ import "./index.css";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     {/* TODO 1. App을 BrowserRouter로 감싸세요. */}
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 );
