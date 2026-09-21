@@ -42,7 +42,7 @@ function MovieDetail() {
 
     fetchMovieDetail();
     // TODO 5. Effect에서 사용하는 반응형 값 id를 의존성 배열에 작성하세요.
-  }, []);
+  }, [id]);
 
   if (isLoading) {
     return <p>영화 정보를 불러오는 중입니다...</p>;
