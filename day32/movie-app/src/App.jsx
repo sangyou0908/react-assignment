@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 
 import MovieDetail from "./components/MovieDetail.jsx";
 import MovieSearch from "./components/MovieSearch.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MovieSearch />} />
         <Route path="/movies/:id" element={<MovieDetail />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {/* <MovieSearch /> */}
     </main>
