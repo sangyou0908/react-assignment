@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import MovieDetail from "./components/MovieDetail";
 import MovieSearch from "./components/MovieSearch";
+import AuthButton from "./components/AuthButton";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
           <div className="header-auth">
             {/* TODO: AuthButton을 만들고 이 위치에 표시합니다. */}
+            <AuthButton />
           </div>
         </div>
       </header>
