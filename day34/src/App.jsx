@@ -1,11 +1,21 @@
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
 import MovieDetail from "./components/MovieDetail";
 import MovieSearch from "./components/MovieSearch";
 import AuthButton from "./components/AuthButton";
-import { useState } from "react";
 
 function App() {
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return unsubscribe;
+  }, []);
 
   return (
     <>
